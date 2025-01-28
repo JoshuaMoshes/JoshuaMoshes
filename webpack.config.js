@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 
 
-
 module.exports = {
     entry: [
         './src/js/main.js'
@@ -91,6 +90,8 @@ if(process.env.NODE_ENV === 'production'){
         new webpack.optimize.UglifyJsPlugin()
     );
     module.exports.plugins.push(
-        new webpack.optimize.PurgecssPlugin({ paths: glob.sync(path.join(__dirname, '*.html'),  { nodir: true }) })
+        new PurgecssPlugin({ 
+            paths: glob.sync(path.join(__dirname, 'public/*.html'), { nodir: true }) 
+        })
     );
 }
