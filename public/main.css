@@ -9985,13 +9985,14 @@ p {
       border-radius: 4px;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      text-transform: capitalize; }
+      /* text-transform: capitalize;  */
+    }
     .contact-area-info .contact-form form textarea {
       padding: 14px 0 0 20px;
       margin-bottom: 20px;
       text-transform: capitalize;
       width: 100%;
-      height: 197.5px;
+      height: 187.5px;
       border: 1px solid #DFE3EB;
       border-radius: 4px;
       -webkit-box-sizing: border-box;
