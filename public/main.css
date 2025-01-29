@@ -9,7 +9,7 @@
   margin-bottom: 0; }
 
 .font-xl {
-  font-size: 80px;
+  font-size: 70px;
   line-height: 98px; }
 
 .font-lg {
@@ -9244,7 +9244,7 @@ p {
   .banner-content-left .btn--primary {
     margin-right: 16px; }
   .banner-content-left .follow-content {
-    margin-top: 200px; }
+    margin-top: 50px; }
     .banner-content-left .follow-content span {
       font-size: 16px;
       font-weight: 400;
@@ -9547,7 +9547,7 @@ p {
       font-weight: 500; } }
 
 .service {
-  padding: 100px 0; }
+  padding: 50px 0; }
   .service h4, .service .h4 {
     text-align: center;
     margin-bottom: 70px;
@@ -9578,7 +9578,7 @@ p {
 
 .project {
   background: rgba(223, 227, 235, 0.4);
-  padding: 100px 0; }
+  padding: 50px 0; }
   .project h4, .project .h4 {
     text-align: center;
     margin-bottom: 70px; }
@@ -9911,7 +9911,7 @@ p {
         line-height: 22px; } }
 
 .blog {
-  padding: 100px 0;
+  padding: 50px 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(223, 227, 235, 0.5)), to(#FFFFFF)), #FFFFFF;
   background: linear-gradient(180deg, rgba(223, 227, 235, 0.5) 0%, #FFFFFF 100%), #FFFFFF; }
   .blog-area-content h3, .blog-area-content .h3 {
@@ -9991,7 +9991,7 @@ p {
       margin-bottom: 20px;
       text-transform: capitalize;
       width: 100%;
-      height: 152px;
+      height: 197.5px;
       border: 1px solid #DFE3EB;
       border-radius: 4px;
       -webkit-box-sizing: border-box;
@@ -10282,7 +10282,11 @@ p {
 .project-work-image {
   border-radius: 6px 6px 0px 0px; }
   .project-work-image img {
-    width: 100%; }
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 3px solid #684FFF;
+  }
 
 .project-work-text {
   padding: 24px;
