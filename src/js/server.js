@@ -35,11 +35,11 @@ app.post('/send_email', async (req, res) => {
     // Set up a transporter (example: Ethereal, for testing).
     // Replace with your real SMTP details (e.g., Gmail, SendGrid, etc.)
     let transporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',  // or e.g. 'smtp.gmail.com'
+      host: 'smtp.gmail.com',  // or e.g. 'smtp.gmail.com'
       port: 587,
       auth: {
-        user: 'YOUR_ETHEREAL_USERNAME',  // replace
-        pass: 'YOUR_ETHEREAL_PASSWORD',  // replace
+        user: 'georgebailey065@gmail.com',  // replace
+        pass: 'bdcz leow wjze lkml',  // replace
       },
     });
 
