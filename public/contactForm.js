@@ -2,53 +2,28 @@
  * public/js/contactForm.js
  */
 
-// Get references to our form and status div
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Prevent normal page reload
+  contactForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    // Collect the form fields
-    const formData = new FormData(contactForm);
-    const data = {
-      fullname: formData.get('fullname'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-    };
-
-    try {
-      // Send a POST request to our Node server's /send_email endpoint
-      const response = await fetch('/send_email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data),
-      });
-
-      // Parse the server response
-      const result = await response.json();
-
-      if (response.ok) {
-        // Success
-        formStatus.style.color = 'green';
-        formStatus.textContent = result.success || 'Email sent successfully!';
-        // Optionally clear form fields
-        contactForm.reset();
-      } else {
-        // Server returned an error status
-        formStatus.style.color = 'red';
-        formStatus.textContent = result.error || 'Error sending email.';
-      }
-
-    } catch (err) {
-      // Network or other error
-      console.error(err);
+    // Use EmailJS to send the form
+    emailjs.sendForm(
+      'service_0zchqdd',   // e.g. 'service_123abc'
+      'template_uo47bo2',  // e.g. 'template_xy123'
+      '#contactForm'       // the CSS selector of the form
+    )
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      formStatus.style.color = 'green';
+      formStatus.textContent = 'Email sent successfully!';
+      contactForm.reset();
+    }, function(error) {
+      console.error('FAILED...', error);
       formStatus.style.color = 'red';
-      formStatus.textContent = 'An error occurred. Please try again.';
-    }
+      formStatus.textContent = 'Oops! Something went wrong. Please try again.';
+    });
   });
 }
